@@ -1,0 +1,66 @@
+<pre style='text-align: left; border: 1px dashed #008DEF; line-height: 18px; padding: 15px; font-size: 13px; font-family:Courier New, Courier, monospace; overflow: auto;'><span style='color:#3F7F5F'>//Shawnak Shivakumar   
+</span><span style='color:#3F7F5F'>//
+</span><span style='color:#3F7F5F'>//December 7, 2020
+</span><span style='color:#3F7F5F'>//
+</span><span style='color:#3F7F5F'>//This program solves quadratic equations and gives both roots.
+</span><span style='color:#3F7F5F'>//
+</span><span style='color:#3F7F5F'>//VIEWERS - COPY AFTER THIS LINE TILL THE END AND PASTE IT HERE: 
+</span><span style='color:#3F7F5F'>//https://www.onlinegdb.com/. Select Java As the language and click run! Enter your //numbers into the console and enjoy!
+</span>
+<span style='font-weight:bold;color:#7B0052;'>import</span> java.util.*;
+<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>class</span> Main <span style='font-weight:bold;color:#D3171B'>{</span>
+  <span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>void</span> main(String [] args)<span style='font-weight:bold;color:#D3171B'>{</span>
+    Scanner scan = <span style='font-weight:bold;color:#7B0052;'>new</span> Scanner (System.in);
+System.out.println(<span style='color:#2A00FF'>"Enter 1 (or any number aside from 2) if you want to run the Quadratic Equation Solver Program, or 2 is you don't!"</span>);
+<span style='font-weight:bold;color:#7B0052;'>int</span> ans = scan.nextInt();
+<span style='font-weight:bold;color:#7B0052;'>while</span> (ans != 2) <span style='font-weight:bold;color:#D3171B'>{</span>
+System.out.println(<span style='color:#2A00FF'>"Welcome To The Quadratic Equation Solver Program!"</span>);
+System.out.println(<span style='color:#2A00FF'>"Please enter a, b, c in the quadratic ax^2+bx+c=0"</span>);
+System.out.println(<span style='color:#2A00FF'>"Please enter a: "</span>);
+<span style='font-weight:bold;color:#7B0052;'>float</span> a = scan.nextFloat();
+System.out.println(<span style='color:#2A00FF'>"Great! Please enter b: "</span>);
+<span style='font-weight:bold;color:#7B0052;'>float</span> b = scan.nextFloat();
+System.out.println(<span style='color:#2A00FF'>"Great! Please enter c: "</span>);
+<span style='font-weight:bold;color:#7B0052;'>float</span> c = scan.nextFloat();
+<span style='color:#3F7F5F'>//quadratic formula calculates both roots
+</span><span style='font-weight:bold;color:#7B0052;'>float</span> discriminant = (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.pow(b,2) - 4*a*c;
+<span style='font-weight:bold;color:#7B0052;'>float</span> abs = (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.abs(Math.pow(b,2) - 4*a*c);
+<span style='font-weight:bold;color:#7B0052;'>int</span> sqrt = (<span style='font-weight:bold;color:#7B0052;'>int</span>) Math.pow(abs, 0.5);
+<span style='font-weight:bold;color:#7B0052;'>if</span> (discriminant &lt; 0) <span style='font-weight:bold;color:#D3171B'>{</span>
+    System.out.println(<span style='color:#2A00FF'>"The answers are imaginary."</span>);
+    <span style='font-weight:bold;color:#7B0052;'>if</span> (b != 0) <span style='font-weight:bold;color:#D3171B'>{</span>
+System.out.println(<span style='color:#2A00FF'>"The First Imaginary Answer: "</span> + -b + <span style='color:#2A00FF'>"+"</span> + sqrt + <span style='color:#2A00FF'>"i"</span> + <span style='color:#2A00FF'>"/"</span> + 2*a + <span style='color:#2A00FF'>" or exactly "</span> + -b + <span style='color:#2A00FF'>"+"</span> + <span style='color:#2A00FF'>"√"</span> + discriminant + <span style='color:#2A00FF'>"/"</span> + 2*a);
+System.out.println(<span style='color:#2A00FF'>"The Second Imaginary Answer: "</span> + -b + <span style='color:#2A00FF'>"-"</span> + sqrt + <span style='color:#2A00FF'>"i"</span> + <span style='color:#2A00FF'>"/"</span> + 2*a + <span style='color:#2A00FF'>" or exactly "</span> + -b + <span style='color:#2A00FF'>"-"</span> + <span style='color:#2A00FF'>"√"</span> + discriminant + <span style='color:#2A00FF'>"/"</span> + 2*a);
+<span style='font-weight:bold;color:#D3171B'>}</span>
+<span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>
+System.out.println(<span style='color:#2A00FF'>"The First Imaginary Answer: +"</span> + sqrt + <span style='color:#2A00FF'>"i"</span> + <span style='color:#2A00FF'>"/"</span> + 2*a + <span style='color:#2A00FF'>" or exactly +"</span> + <span style='color:#2A00FF'>"√"</span> + discriminant + <span style='color:#2A00FF'>"/"</span> + 2*a);
+System.out.println(<span style='color:#2A00FF'>"The Second Imaginary Answer: -"</span> + sqrt + <span style='color:#2A00FF'>"i"</span> + <span style='color:#2A00FF'>"/"</span> + 2*a + <span style='color:#2A00FF'>" or exactly -"</span> + <span style='color:#2A00FF'>"√"</span> + discriminant + <span style='color:#2A00FF'>"/"</span> + 2*a);
+<span style='font-weight:bold;color:#D3171B'>}</span>
+<span style='font-weight:bold;color:#D3171B'>}</span>
+<span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (a != 0) <span style='font-weight:bold;color:#D3171B'>{</span>   
+<span style='font-weight:bold;color:#7B0052;'>double</span> x = (-b+ Math.pow(Math.pow(b,2) - 4*a*c,0.5))/(2*a);
+<span style='font-weight:bold;color:#7B0052;'>double</span> y = (-b- Math.pow(Math.pow(b,2) - 4*a*c,0.5))/(2*a);
+System.out.println(<span style='color:#2A00FF'>"\nThe First Answer is: "</span> + x);
+System.out.println(<span style='color:#2A00FF'>"\nThe Second Answer is: "</span> + y);
+<span style='font-weight:bold;color:#D3171B'>}</span>
+<span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (a == 0) <span style='font-weight:bold;color:#D3171B'>{</span>
+    <span style='font-weight:bold;color:#7B0052;'>if</span> (b != 0) <span style='font-weight:bold;color:#D3171B'>{</span>
+    <span style='font-weight:bold;color:#7B0052;'>float</span> x = -c/b;
+    System.out.println(<span style='color:#2A00FF'>"The Only Answer Is: "</span> + x);
+    <span style='font-weight:bold;color:#D3171B'>}</span>
+    <span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>
+        <span style='font-weight:bold;color:#7B0052;'>if</span> (c != 0) <span style='font-weight:bold;color:#D3171B'>{</span>
+            System.out.println(<span style='color:#2A00FF'>"This equation is false, NO SOLUTIONS."</span>);
+        <span style='font-weight:bold;color:#D3171B'>}</span>
+        <span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (c == 0) <span style='font-weight:bold;color:#D3171B'>{</span>
+            System.out.println(<span style='color:#2A00FF'>"This equation is true, Infinite Solutions"</span>);
+        <span style='font-weight:bold;color:#D3171B'>}</span>
+    <span style='font-weight:bold;color:#D3171B'>}</span>
+<span style='font-weight:bold;color:#D3171B'>}</span>
+System.out.println(<span style='color:#2A00FF'>"Do you want to run again? Please press 1 if yes, and 2 if No."</span>);
+ans = scan.nextInt();
+<span style='font-weight:bold;color:#D3171B'>}</span>
+System.out.println(<span style='color:#2A00FF'>"Thank you for checking out the Quadratic Equation Solver Program! Press enter to exit the console."</span>);
+<span style='font-weight:bold;color:#D3171B'>}</span>
+<span style='font-weight:bold;color:#D3171B'>}</span></pre>
+

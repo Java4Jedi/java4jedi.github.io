@@ -1,0 +1,194 @@
+<pre style='text-align: left; border: 1px dashed #008DEF; line-height: 18px; padding: 15px; font-size: 13px; font-family: Courier New, Courier, monospace; overflow: auto;'><span style='color:#3F7F5F'>//Shawnak Shivakumar	
+</span><span style='color:#3F7F5F'>//
+</span><span style='color:#3F7F5F'>//December 22, 2020
+</span><span style='color:#3F7F5F'>//
+</span><span style='color:#3F7F5F'>//This program gives the missing info in a triangle using tangents, cosines, sin, arcs, radians, and degrees.
+</span><span style='color:#3F7F5F'>//
+</span><span style='color:#3F7F5F'>//VIEWERS - COPY AFTER THIS LINE TILL THE END AND PASTE IT HERE: 
+</span><span style='color:#3F7F5F'>//https://www.onlinegdb.com/. Select Java As the language and click run! Enter your //numbers into the console and enjoy!
+</span><span style='font-weight:bold;color:#7B0052;'>import</span> java.util.*;  
+<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>class</span> Main <span style='font-weight:bold;color:#D3171B'>{</span>  
+<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>void</span> main(String args[])<span style='font-weight:bold;color:#D3171B'>{</span>  
+Scanner scan = <span style='font-weight:bold;color:#7B0052;'>new</span> Scanner(System.in);  
+System.out.println(<span style='color:#2A00FF'>"Enter 1 if you want to run the Using Sin, Cos, Tan To Find Missing Lengths of Triangle Program, or 2 is you don't!"</span>);
+<span style='font-weight:bold;color:#7B0052;'>int</span> ans = scan.nextInt(); 
+Scanner in = <span style='font-weight:bold;color:#7B0052;'>new</span> Scanner(System.in);
+<span style='font-weight:bold;color:#7B0052;'>while</span> (ans != 2) <span style='font-weight:bold;color:#D3171B'>{</span>
+System.out.println(<span style='color:#2A00FF'>"This program uses Right Triangle △ABC, where &lt;B = 90* and AC is the hypotenuse."</span>);
+System.out.println(<span style='color:#2A00FF'>"Please enter EXACTLY 2 information (excluding the b = 90*), if you do not know the number, type 0."</span>);
+System.out.println(<span style='color:#2A00FF'>"&lt;A = "</span>);
+
+<span style='font-weight:bold;color:#7B0052;'>float</span> a = scan.nextFloat();
+<span style='font-weight:bold;color:#7B0052;'>while</span> (a &gt;= 90) <span style='font-weight:bold;color:#D3171B'>{</span>
+    System.out.println(<span style='color:#2A00FF'>"This number is invalid. Angle a has to be less than 90*. Try again. &lt;A = "</span>);
+    a = scan.nextFloat();
+<span style='font-weight:bold;color:#D3171B'>}</span>
+System.out.println(<span style='color:#2A00FF'>"&lt;B = 90*"</span>);
+<span style='font-weight:bold;color:#7B0052;'>float</span> b = 90;
+<span style='font-weight:bold;color:#7B0052;'>if</span> (a &gt; 0) <span style='font-weight:bold;color:#D3171B'>{</span>
+    System.out.println(<span style='color:#2A00FF'>"Side AC = "</span>);
+    <span style='font-weight:bold;color:#7B0052;'>float</span> AC = scan.nextFloat();
+    <span style='font-weight:bold;color:#7B0052;'>if</span> (AC &gt; 0) <span style='font-weight:bold;color:#D3171B'>{</span>
+        <span style='font-weight:bold;color:#7B0052;'>float</span> c = 90 - a;
+<span style='font-weight:bold;color:#7B0052;'>float</span> AB = AC * (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.sin(c*Math.PI/180);
+    <span style='font-weight:bold;color:#7B0052;'>float</span> BC = (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.sqrt((<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.pow(AC,2) - (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.pow(AB,2));
+    <span style='font-weight:bold;color:#7B0052;'>float</span> ABrounded = (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.round(AB*100.0)/100;
+    <span style='font-weight:bold;color:#7B0052;'>float</span> BCrounded = (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.round(BC*100.0)/100;
+    System.out.println(<span style='color:#2A00FF'>"Results: Angle A = "</span> + a);
+    System.out.println(<span style='color:#2A00FF'>"Angle B = 90"</span>);
+    System.out.println(<span style='color:#2A00FF'>"Angle C = "</span> + c);
+    System.out.println(<span style='color:#2A00FF'>"AC = "</span> + AC);
+    System.out.println(<span style='color:#2A00FF'>"AB = "</span> + ABrounded);
+    System.out.println(<span style='color:#2A00FF'>"BC = "</span> + BCrounded);
+    <span style='font-weight:bold;color:#D3171B'>}</span>
+    <span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>
+      System.out.println(<span style='color:#2A00FF'>"Side AB = "</span>);
+        <span style='font-weight:bold;color:#7B0052;'>float</span> AB = scan.nextFloat();  
+        <span style='font-weight:bold;color:#7B0052;'>if</span> (AB &gt; 0) <span style='font-weight:bold;color:#D3171B'>{</span>
+            <span style='font-weight:bold;color:#7B0052;'>float</span> c = 90 - a;
+AC = AB / (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.cos(a*Math.PI/180);
+<span style='font-weight:bold;color:#7B0052;'>float</span> ACrounded = (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.round(AC*100.0)/100;
+<span style='font-weight:bold;color:#7B0052;'>float</span> BC = (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.sqrt((<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.pow(AC,2) - (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.pow(AB,2));
+<span style='font-weight:bold;color:#7B0052;'>float</span> BCrounded = (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.round(BC*100.0)/100;
+System.out.println(<span style='color:#2A00FF'>"Results: Angle A = "</span> + a);
+    System.out.println(<span style='color:#2A00FF'>"Angle B = 90"</span>);
+    System.out.println(<span style='color:#2A00FF'>"Angle C = "</span> + c);
+    System.out.println(<span style='color:#2A00FF'>"AC = "</span> + ACrounded);
+    System.out.println(<span style='color:#2A00FF'>"AB = "</span> + AB);
+    System.out.println(<span style='color:#2A00FF'>"BC = "</span> + BCrounded);
+        <span style='font-weight:bold;color:#D3171B'>}</span>
+        <span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>
+            System.out.println(<span style='color:#2A00FF'>"Side BC = "</span>);
+<span style='font-weight:bold;color:#7B0052;'>float</span> BC = scan.nextFloat();
+           <span style='font-weight:bold;color:#7B0052;'>float</span> c = 90 - a;
+    AC = BC / (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.cos(c * Math.PI/180);
+	<span style='font-weight:bold;color:#7B0052;'>float</span> ACrounded = (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.round(AC*100.0)/100;
+	AB = (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.sqrt((<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.pow(AC,2) - (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.pow(BC,2));
+	<span style='font-weight:bold;color:#7B0052;'>float</span> ABrounded = (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.round(AB*100.0)/100;
+	System.out.println(<span style='color:#2A00FF'>"Results: Angle A = "</span> + a);
+    System.out.println(<span style='color:#2A00FF'>"Angle B = 90"</span>);
+    System.out.println(<span style='color:#2A00FF'>"Angle C = "</span> + c);
+    System.out.println(<span style='color:#2A00FF'>"AC = "</span> + ACrounded);
+    System.out.println(<span style='color:#2A00FF'>"AB = "</span> + ABrounded);
+    System.out.println(<span style='color:#2A00FF'>"BC = "</span> + BC); 
+        <span style='font-weight:bold;color:#D3171B'>}</span>
+    <span style='font-weight:bold;color:#D3171B'>}</span>
+<span style='font-weight:bold;color:#D3171B'>}</span>
+<span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (a &lt;= 0) <span style='font-weight:bold;color:#D3171B'>{</span>
+  System.out.println(<span style='color:#2A00FF'>"&lt;C = "</span>);
+<span style='font-weight:bold;color:#7B0052;'>float</span> c = scan.nextFloat();  
+<span style='font-weight:bold;color:#7B0052;'>while</span> (c &gt;= 90) <span style='font-weight:bold;color:#D3171B'>{</span>
+    System.out.println(<span style='color:#2A00FF'>"This number is invalid. Angle c has to be less than 90*. Try again. &lt;C = "</span>);
+    c = scan.nextFloat();
+<span style='font-weight:bold;color:#D3171B'>}</span>
+<span style='font-weight:bold;color:#7B0052;'>if</span> (c &gt; 0) <span style='font-weight:bold;color:#D3171B'>{</span>
+   System.out.println(<span style='color:#2A00FF'>"Side AC = "</span>);
+    <span style='font-weight:bold;color:#7B0052;'>float</span> AC = scan.nextFloat(); 
+    <span style='font-weight:bold;color:#7B0052;'>if</span> (AC &gt; 0) <span style='font-weight:bold;color:#D3171B'>{</span>
+       a = 90 - c;
+    <span style='font-weight:bold;color:#7B0052;'>float</span> AB = AC * (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.sin(c*Math.PI/180);
+    <span style='font-weight:bold;color:#7B0052;'>float</span> BC = (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.sqrt((<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.pow(AC,2) - (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.pow(AB,2));
+    <span style='font-weight:bold;color:#7B0052;'>float</span> ABrounded = (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.round(AB*100.0)/100;
+    <span style='font-weight:bold;color:#7B0052;'>float</span> BCrounded = (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.round(BC*100.0)/100;
+    System.out.println(<span style='color:#2A00FF'>"Results: Angle A = "</span> + a);
+    System.out.println(<span style='color:#2A00FF'>"Angle B = 90"</span>);
+    System.out.println(<span style='color:#2A00FF'>"Angle C = "</span> + c);
+    System.out.println(<span style='color:#2A00FF'>"AC = "</span> + AC);
+    System.out.println(<span style='color:#2A00FF'>"AB = "</span> + ABrounded);
+    System.out.println(<span style='color:#2A00FF'>"BC = "</span> + BCrounded); 
+    <span style='font-weight:bold;color:#D3171B'>}</span>
+    <span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>
+      System.out.println(<span style='color:#2A00FF'>"Side AB = "</span>);
+        <span style='font-weight:bold;color:#7B0052;'>float</span> AB = scan.nextFloat();  
+        <span style='font-weight:bold;color:#7B0052;'>if</span> (AB &gt; 0) <span style='font-weight:bold;color:#D3171B'>{</span>
+           a = 90 - c;
+        AC = AB / (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.sin(c*Math.PI/180);
+<span style='font-weight:bold;color:#7B0052;'>float</span> BC = (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.sqrt((<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.pow(AC,2) - (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.pow(AB,2));
+<span style='font-weight:bold;color:#7B0052;'>float</span> ACrounded = (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.round(AC*100.0)/100;
+    <span style='font-weight:bold;color:#7B0052;'>float</span> BCrounded = (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.round(BC*100.0)/100;
+    System.out.println(<span style='color:#2A00FF'>"Results: Angle A = "</span> + a);
+    System.out.println(<span style='color:#2A00FF'>"Angle B = 90"</span>);
+    System.out.println(<span style='color:#2A00FF'>"Angle C = "</span> + c);
+    System.out.println(<span style='color:#2A00FF'>"AC = "</span> + ACrounded);
+    System.out.println(<span style='color:#2A00FF'>"AB = "</span> + AB);
+    System.out.println(<span style='color:#2A00FF'>"BC = "</span> + BCrounded); 
+        <span style='font-weight:bold;color:#D3171B'>}</span>
+        <span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>
+           System.out.println(<span style='color:#2A00FF'>"Side BC = "</span>);
+            <span style='font-weight:bold;color:#7B0052;'>float</span> BC = scan.nextFloat(); 
+            AC = BC / (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.cos(c * Math.PI/180);
+	<span style='font-weight:bold;color:#7B0052;'>float</span> ACrounded = (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.round(AC*100.0)/100;
+	AB = (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.sqrt((<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.pow(AC,2) - (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.pow(BC,2));
+	<span style='font-weight:bold;color:#7B0052;'>float</span> ABcrounded = (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.round(AB*100.0)/100;
+	a = 90 - c;
+	System.out.println(<span style='color:#2A00FF'>"Results: Angle A = "</span> + a);
+    System.out.println(<span style='color:#2A00FF'>"Angle B = 90"</span>);
+    System.out.println(<span style='color:#2A00FF'>"Angle C = "</span> + c);
+    System.out.println(<span style='color:#2A00FF'>"AC = "</span> + ACrounded);
+    System.out.println(<span style='color:#2A00FF'>"AB = "</span> + ABcrounded);
+    System.out.println(<span style='color:#2A00FF'>"BC = "</span> + BC);
+        <span style='font-weight:bold;color:#D3171B'>}</span>
+    <span style='font-weight:bold;color:#D3171B'>}</span>
+<span style='font-weight:bold;color:#D3171B'>}</span>
+<span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#7B0052;'>if</span> (c &lt;= 0) <span style='font-weight:bold;color:#D3171B'>{</span>
+  System.out.println(<span style='color:#2A00FF'>"Side AC = "</span>);
+    <span style='font-weight:bold;color:#7B0052;'>float</span> AC = scan.nextFloat(); 
+    <span style='font-weight:bold;color:#7B0052;'>if</span> (AC &gt; 0) <span style='font-weight:bold;color:#D3171B'>{</span>
+        System.out.println(<span style='color:#2A00FF'>"Side AB = "</span>);
+        <span style='font-weight:bold;color:#7B0052;'>float</span> AB = scan.nextFloat();  
+        <span style='font-weight:bold;color:#7B0052;'>if</span> (AB &gt; 0) <span style='font-weight:bold;color:#D3171B'>{</span>
+            <span style='font-weight:bold;color:#7B0052;'>float</span> BC = (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.sqrt((<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.pow(AC,2) - (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.pow(AB,2));
+<span style='font-weight:bold;color:#7B0052;'>float</span> BCrounded = (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.round(BC*100.0)/100;
+c = (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.toDegrees(Math.asin(AB/AC));
+<span style='font-weight:bold;color:#7B0052;'>float</span> crounded = (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.round(c*100.0)/100;
+a = 90 - crounded;
+    System.out.println(<span style='color:#2A00FF'>"Results: Angle A = "</span> + a);
+    System.out.println(<span style='color:#2A00FF'>"Angle B = 90"</span>);
+    System.out.println(<span style='color:#2A00FF'>"Angle C = "</span> + crounded);
+    System.out.println(<span style='color:#2A00FF'>"AC = "</span> + AC);
+    System.out.println(<span style='color:#2A00FF'>"AB = "</span> + AB);
+    System.out.println(<span style='color:#2A00FF'>"BC = "</span> + BCrounded);
+        <span style='font-weight:bold;color:#D3171B'>}</span>
+        <span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>
+           System.out.println(<span style='color:#2A00FF'>"Side BC = "</span>);
+        <span style='font-weight:bold;color:#7B0052;'>float</span> BC = scan.nextFloat(); 
+        AB = (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.sqrt((<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.pow(AC,2) - (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.pow(BC,2));
+    <span style='font-weight:bold;color:#7B0052;'>float</span> ABrounded = (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.round(AB*100.0)/100;
+    c = (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.toDegrees(Math.asin(AB/AC));
+    <span style='font-weight:bold;color:#7B0052;'>float</span> crounded = (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.round(c*100.0)/100;
+    a = 90 - crounded;
+    System.out.println(<span style='color:#2A00FF'>"Results: Angle A = "</span> + a);
+    System.out.println(<span style='color:#2A00FF'>"Angle B = 90"</span>);
+    System.out.println(<span style='color:#2A00FF'>"Angle C = "</span> + crounded);
+    System.out.println(<span style='color:#2A00FF'>"AC = "</span> + AC);
+    System.out.println(<span style='color:#2A00FF'>"AB = "</span> + ABrounded);
+    System.out.println(<span style='color:#2A00FF'>"BC = "</span> + BC);
+        <span style='font-weight:bold;color:#D3171B'>}</span>
+    <span style='font-weight:bold;color:#D3171B'>}</span>
+    <span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>
+      System.out.println(<span style='color:#2A00FF'>"Side AB = "</span>);
+        <span style='font-weight:bold;color:#7B0052;'>float</span> AB = scan.nextFloat(); 
+        System.out.println(<span style='color:#2A00FF'>"Side BC = "</span>);
+        <span style='font-weight:bold;color:#7B0052;'>float</span> BC = scan.nextFloat(); 
+        AC = (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.sqrt((<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.pow(AB,2) + (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.pow(BC,2));
+    c = (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.toDegrees(Math.asin(AB/AC));
+    <span style='font-weight:bold;color:#7B0052;'>float</span> crounded = (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.round(c*100.0)/100;
+    a = 90 - crounded;
+    
+    System.out.println(<span style='color:#2A00FF'>"Results: Angle A = "</span> + a);
+    System.out.println(<span style='color:#2A00FF'>"Angle B = 90"</span>);
+    System.out.println(<span style='color:#2A00FF'>"Angle C = "</span> + crounded);
+    System.out.println(<span style='color:#2A00FF'>"AC = "</span> + AC);
+    System.out.println(<span style='color:#2A00FF'>"AB = "</span> + AB);
+    System.out.println(<span style='color:#2A00FF'>"BC = "</span> + BC);
+    <span style='font-weight:bold;color:#D3171B'>}</span>
+<span style='font-weight:bold;color:#D3171B'>}</span>
+<span style='font-weight:bold;color:#D3171B'>}</span>
+<span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>
+System.out.println(<span style='color:#2A00FF'>"Sorry! You failed to enter 2 numbers (excluding b = 90*)."</span>) ;   
+<span style='font-weight:bold;color:#D3171B'>}</span>
+System.out.println(<span style='color:#2A00FF'>"Do you want to run again, 1 if yes, 2 if no."</span>);
+ans = scan.nextInt();
+<span style='font-weight:bold;color:#D3171B'>}</span>
+<span style='font-weight:bold;color:#D3171B'>}</span>
+<span style='font-weight:bold;color:#D3171B'>}</span></pre>

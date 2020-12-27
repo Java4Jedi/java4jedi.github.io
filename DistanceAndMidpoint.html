@@ -1,0 +1,39 @@
+<pre style='text-align: left; border: 1px dashed #008DEF; line-height: 18px; 
+padding: 15px; font-size: 13px; font-family: Courier New, Courier, monospace; overflow: auto;'><span style='color:#3F7F5F'>//Shawnak Shivakumar	
+</span><span style='color:#3F7F5F'>//
+</span><span style='color:#3F7F5F'>//December 11, 2020
+</span><span style='color:#3F7F5F'>//
+</span><span style='color:#3F7F5F'>//This program solves the distance and midpoint between two points in a Cartesian Coordinate Plane
+</span><span style='color:#3F7F5F'>//
+</span><span style='color:#3F7F5F'>//VIEWERS - COPY AFTER THIS LINE TILL THE END AND PASTE IT HERE: 
+</span><span style='color:#3F7F5F'>//https://www.onlinegdb.com/. Select JAVA As the language and click run! Enter your numbers into the console and enjoy!
+</span><span style='font-weight:bold;color:#7B0052;'>import</span> java.util.*;	
+<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>class</span> Main <span style='font-weight:bold;color:#D3171B'>{</span>
+  <span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>void</span> main(String [] args)<span style='font-weight:bold;color:#D3171B'>{</span>
+    Scanner scan = <span style='font-weight:bold;color:#7B0052;'>new</span> Scanner (System.in);
+System.out.println(<span style='color:#2A00FF'>"Enter 1 (or any number aside from 2) if you want to run the Distance and Midpoint Between Two Points Program, or 2 is you don't!"</span>);
+<span style='font-weight:bold;color:#7B0052;'>int</span> ans = scan.nextInt();
+<span style='font-weight:bold;color:#7B0052;'>while</span> (ans != 2) <span style='font-weight:bold;color:#D3171B'>{</span>
+System.out.println(<span style='color:#2A00FF'>"Please one by one enter the two coordinates"</span>);
+System.out.println(<span style='color:#2A00FF'>"Please enter X₁ in (X₁,Y₁)"</span>);
+<span style='font-weight:bold;color:#7B0052;'>float</span> x1 = scan.nextFloat();
+System.out.println(<span style='color:#2A00FF'>"Great! Please enter Y₁"</span>);
+<span style='font-weight:bold;color:#7B0052;'>float</span> y1 = scan.nextFloat();
+System.out.println(<span style='color:#2A00FF'>"Great! Please enter X₂"</span>);
+<span style='font-weight:bold;color:#7B0052;'>float</span> x2 = scan.nextFloat();
+System.out.println(<span style='color:#2A00FF'>"Great! Finally, please enter Y₂"</span>);
+<span style='font-weight:bold;color:#7B0052;'>float</span> y2 = scan.nextFloat();
+<span style='font-weight:bold;color:#7B0052;'>float</span> beforeSqrt = (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.pow(Math.abs(x2-x1),2) + (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.pow(Math.abs(y2-y1),2);
+<span style='font-weight:bold;color:#7B0052;'>float</span> answer = (<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.sqrt((<span style='font-weight:bold;color:#7B0052;'>float</span>) Math.pow(Math.abs(x2-x1),2) + Math.pow(Math.abs(y2-y1),2));
+ <span style='font-weight:bold;color:#7B0052;'>float</span> x3 = (x2+x1)/2;
+    <span style='font-weight:bold;color:#7B0052;'>float</span> y3 = (y2+y1)/2;
+    System.out.println(<span style='color:#2A00FF'>"The midpoint of these two points is ("</span> + x3 + <span style='color:#2A00FF'>", "</span> + y3 + <span style='color:#2A00FF'>")"</span>);
+
+System.out.println(<span style='color:#2A00FF'>"The distance between these two points is "</span> + answer + <span style='color:#2A00FF'>" or exactly: √"</span> + beforeSqrt);
+System.out.println(<span style='color:#2A00FF'>"Do you want to run again? Please press 1 if yes, and 2 if No."</span>);
+ans = scan.nextInt();
+
+<span style='font-weight:bold;color:#D3171B'>}</span>
+System.out.println(<span style='color:#2A00FF'>"Thank you for checking out the Distance and Midpoint Between Two Points Program! Press enter to exit the console."</span>);
+<span style='font-weight:bold;color:#D3171B'>}</span>
+<span style='font-weight:bold;color:#D3171B'>}</span></pre>
